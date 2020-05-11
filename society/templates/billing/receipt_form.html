@@ -1,0 +1,21 @@
+{% extends 'index1.html' %}
+
+{% block content %}
+{# Load the tag library #}
+{% load bootstrap4 %}
+
+
+        <div class="container">
+                <form method="POST" action="">
+                    {% csrf_token %} 
+                    {% bootstrap_form form %}
+                    {% bootstrap_form_errors form %}
+                        
+                    {% if not edit %}
+                    <button class="btn btn-danger" type="submit">Create</button>
+                    {% else %}
+                    <button class="btn btn-success" type="submit">Update</button>
+                    {% endif %}
+                </form>
+        </div>
+{% endblock content %}

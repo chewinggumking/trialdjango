@@ -1,0 +1,27 @@
+{% extends 'index1.html' %}
+
+{% block title %} Add Guest {% endblock title %} 
+
+
+{% block content %}
+
+<form method="POST" action="">
+{% csrf_token %}    
+<!-- {% for field in form %}
+{{field.owner}}
+{% endfor %} -->
+
+<!-- <div class="input-field ">{{form.owner}}</div>
+{{form.flat_number}}
+{{form.wing}} -->
+{{form.as_p}}
+
+<button class="btn waves-effect waves-light right" type="submit" name="action">Add Flat
+    <i class="material-icons right">add</i>
+</button>
+</form>
+<br><br>
+
+
+
+{% endblock content %}

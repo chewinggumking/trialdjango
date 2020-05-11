@@ -1,0 +1,23 @@
+{% extends 'index1.html' %}
+
+{% block content %} 
+
+{% for initial in initial_amounts %}
+
+<ul class="collection with-header">
+    <li class="collection-header"><h4>Initials Amounts for Flat Type {{initial.flat_type}} </h4></li>
+    <li class="collection-item"><div>Municipal Tax <span class="secondary-content">{{initial.municipal_tax}} </span></div></li>
+    <li class="collection-item"><div>Maintenance Charges <span class="secondary-content">{{initial.maintenance}} </span></div></li>
+    <li class="collection-item"><div>Water Charges <span class="secondary-content">{{initial.water_charges}} </span></div></li>
+    <li class="collection-item"><div>Parking Charges - Car/Scooter/Stilt <span class="secondary-content">{{initial.parking_charges}} </span></div></li>
+    <li class="collection-item"><div>Sinking Fund <span class="secondary-content">{{initial.sinking_fund}} </span></div></li>
+    <li class="collection-item"><div>Building Repair Fund <span class="secondary-content">{{initial.building_repair}} </span></div></li>
+    <li class="collection-item"><div>Electricit Insurance Charges <span class="secondary-content">{{initial.elec_ins_chgs}} </span></div></li>
+    
+  </ul>
+        
+        
+  {% endfor %}
+
+
+{% endblock content %}

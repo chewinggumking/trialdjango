@@ -1,0 +1,18 @@
+{% extends 'index1.html' %}
+
+{% block content %}
+
+
+{{ flat }}<br>
+{{ flat.guest }}<br>
+{{ flat.guest.mobile }}<br>
+
+{{flat.rentalstatus}}<br>
+{% for bill in flat.flatbill_set.all %}
+<p>
+    <a  href = "{% url 'bill_view' bill.id %}">{{bill}} - {{bill.total}}</a><br>
+</p>
+{% endfor %}
+
+
+{% endblock content %}

@@ -1,0 +1,53 @@
+{% extends 'index1.html' %}
+
+{% block content %}
+<br>
+
+
+
+    {% if messages %}
+        {% for message in messages%}
+            {{message}}
+        {% endfor %}
+
+    {% endif %}
+
+    {% if bills %}
+    <br>
+    <p><strong>All Bills: </strong></p>
+    <table class="table table-bordered table-hover">
+            <thead class="thead-light">
+                    <tr>
+                        <th>Flat No.</th>
+                        <th>Bill Amount</th>
+                        <th>Bill Date</th>
+                        <th>Status</th>
+                    </tr>
+            </thead>
+        {% for bill in bills %}
+        
+            <tr>
+                <td><strong>{{bill.flat_name}}</strong></td>
+                <td><strong>{{bill.total}}</strong></td> 
+                <td><a  href = "{% url 'bill_view' bill.id %}"> {{bill.bill_date|date:"j M Y"}}</a></td>
+                {% if bill.is_paid %}
+                <td style="color:green">Receipt no: {{bill.receipt.id}}</td>
+                {% else %}
+                <td style="color:red" >OUTSTANDING</td>
+                {% endif %}
+            </tr>
+
+        {% endfor %}
+    {% else %}
+        No Bills to Show
+    {% endif %}
+    </table>
+
+
+
+<br>      
+<a  href = "{% url 'create_bills' %}" >
+    <i class="material-icons">add</i>Add
+</a>
+
+{% endblock content %}

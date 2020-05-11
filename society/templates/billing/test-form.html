@@ -1,0 +1,150 @@
+
+<html>
+    <head>
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <title>Express Apartments |  Members </title>
+    </head>
+    <body>
+
+    <div class="container">
+                   
+                   
+                           
+            <nav class="navbar navbar-expand-lg navbar-light bg-info">  
+                   
+                <a href="/" class="navbar-brand text-light">Logo</a>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item  "><a class="nav-link text-light" href="/">Home</a></li>
+                        <li class="nav-item "><a class="nav-link text-light" href="/add/">Add</a></li>
+                        <li class="nav-item "><a class="nav-link text-light" href="/flats/">Flats</a></li>
+                        <li class="nav-item "><a class="nav-link text-light" href="/billing/bill_list/">List Bills</a></li>
+                    </ul>
+
+                    <ul class="navbar-nav ml-auto">
+                            <li class="nav-item  "><a class="nav-link text-light" href="#">Sign-in</a></li>
+                            <li class="nav-item "><a class="nav-link text-light" href="#">Login</a></li>
+                    </ul>
+            </nav>            
+        <div class="row">            
+            <div class="col-6 col-md-4 " >
+                <br>
+                <span class="text-right ">Content on the side</span>
+
+
+            </div>            
+            <div class="col-12 col-md-8 ">                
+                    <div>
+                        <br>
+                        <strong>Bill Date: </strong>15 Feb 2018<br>
+                        <strong>Flat : </strong>303 A<br>
+                        Maya Handa<br><br>
+                            <table class="table table-bordered">
+                                <tr class="table-secondary">
+                                <th style="width:70%" scope="col">Particulars</th>
+                                <th class="text-right" scope="col">Amount (Rs.)</th> 
+                                </tr>
+                                
+                                <tr>
+                                    <td>Municipal Tax</td>
+                                    <td class="text-right">2036.00</td> 
+                                </tr>
+                                
+                                </tr>
+                                    <tr>
+                                    <td>Maintenance Charges</td>
+                                    <td class="text-right">1005.00</td> 
+                                </tr>
+                
+                                <tr>
+                                <td>Water Charges</td>
+                                <td class="text-right">415.00</td> 
+                                </tr>
+                                
+                                <tr>
+                                    <td>Parking Charges - Car/Scooter/Stilt</td>
+                                    <td class="text-right">100.00</td> 
+                                </tr>
+                
+                                <tr>
+                                    <td>Sinking Fund</td>
+                                    <td class="text-right">133.00</td> 
+                                </tr>
+                
+                                <tr>
+                                        <td>Building Repair Fund</td>
+                                        <td class="text-right">1500.00</td> 
+                                </tr>
+                
+                                <tr>
+                                        <td>Electricity Insurance Charges</td>
+                                        <td class="text-right">610.00</td> 
+                                </tr>
+                
+                                <tr>
+                                        <td>Non Occupancy Charges</td>
+                                        <td class="text-right">0.00</td> 
+                                </tr>
+                
+                                <tr>
+                                        <td>Additional Items</td>
+                                        <td class="text-right">0.00</td> 
+                                </tr>
+                
+                                <tr>
+                                        <td>Additional Items</td>
+                                        <td class="text-right">0.00</td> 
+                                </tr>
+                
+                                <tr class="table-info">
+                                        <td class="text-right"><strong>TOTAL</strong></td>
+                                        <td class="text-right"><strong>5799.00</strong></td> 
+                                </tr>
+                
+                            </table>
+                        
+                            </div>
+                            
+                        <div>
+    
+        
+                            <form method="POST" action="">
+                                
+                                <input type='hidden' name='csrfmiddlewaretoken' value='ywagsmi0RgOlzx3Icj594JHtJ3JN2M6ibpz3QNDCE9dEq91C2UR1hSRiNmPwxK2Q' />
+                                
+                                    <p><label for="id_paid_on">Paid on:</label> 
+                                       <input type="text" name="paid_on" required id="id_paid_on" class="form-control"/>
+                                    </p>
+                               
+                                <p><label for="id_payment_mode">Payment mode:</label>
+                                    <input type="text" name="payment_mode" maxlength="200" required id="id_payment_mode" class="form-control" /> <span class="helptext">Cheque, Bank Transfer etc.</span>
+                                </p>
+                                <p><label for="id_drawn_on">Drawn on:</label>
+                                    <input type="text" name="drawn_on" maxlength="250" required id="id_drawn_on" class="form-control" /> <span class="helptext">Financial institution received from.</span>
+                                </p>
+                                <p><label for="id_transaction_no">Transaction no:</label>
+                                    <input type="text" name="transaction_no" maxlength="250" required id="id_transaction_no" class="form-control" /> <span class="helptext">Cheque Number or Bank Transfer Number.</span>
+                                </p>
+                                <p><label for="id_received_amount">Received amount:</label> 
+                                    <input type="number" name="received_amount" value="5573.00" step="0.01" required id="id_received_amount" class="form-control" /> <span class="helptext">Amount Received from Member.</span>
+                                </p>
+                                <button class="btn waves-effect waves-light right" type="submit" name="action">Submit</button>
+                                
+                            </form>
+                        
+                    
+            
+                
+            
+                            </div>
+                            
+                </div>
+            </div> 
+        </div>           
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        </script>
+    </body>
+    </html>

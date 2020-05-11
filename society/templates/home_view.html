@@ -1,0 +1,38 @@
+{% extends 'index1.html' %}
+
+{% block content %}
+<table class="table table-bordered">
+    <thead class="thead-light">
+      <tr>
+          <th>Flat No.</th>
+          <th>Member</th>
+          <th>Mobile</th>
+          <th>Action</th>
+      </tr>
+    </thead>
+    {% for guest in guests %}
+       <tbody>
+          <tr>
+            <td>{{guest.flat_number}}</td>
+            <td>{{guest.full_name }}</td>
+            <td>{{guest.mobile}}</td>
+            <td><a href =  "delete/{{guest.id}}" class="right" ><i class="material-icons">delete</i></a>
+                <a href =  "edit/{{guest.id}}" class="right" ><i class="material-icons">edit</i></a></td>
+          </tr>
+        </tbody>
+    
+    <!-- <div class="card-panel hoverable"> 
+        {{guest.full_name }} {{guest.mobile}}
+        <a href =  "delete/{{guest.id}}" class="right" ><i class="material-icons">delete</i></a>
+        <a href =  "edit/{{guest.id}}" class="right" ><i class="material-icons">edit</i></a>
+            
+    </div> -->
+    {% endfor %}
+</table>
+
+<a  href = "{%url 'add_member'%}" class="btn btn-floating btn-large cyan right">
+    <i class="material-icons">add</i>
+</a>
+
+
+{% endblock content %}

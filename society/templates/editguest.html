@@ -1,0 +1,19 @@
+{% extends 'index1.html' %}
+
+{% block title %} Add Guest {% endblock title %} 
+
+
+{% block content %}
+<form method="POST" action="">
+{% csrf_token %}    
+{{form.as_p}}
+
+<button class="btn waves-effect waves-light right" type="submit" name="action">Save User
+    <i class="material-icons right">add</i>
+</button>
+</form>
+
+
+
+
+{% endblock content %}

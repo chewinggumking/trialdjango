@@ -1,0 +1,115 @@
+{% extends 'index1.html' %}
+
+{% block content %}
+    <div>
+        
+        <table style="width:100%" class="bordered">
+            <tr> 
+                <th><h4>Flat : {{bill.flat_name}} </h4></th>
+                <th><h5>Bill Date: {{bill.bill_date|date:"j M Y"}}</h5></th>
+            </tr>
+            <tr>
+                <th>{{bill.flat_name.guest}}</th>
+                <th><strong>Bill Month: </strong>{{bill.bill_date|date:"M Y"}}</th>
+            </tr>
+            <tr>
+                {% if not bill.is_paid %}
+                    <td style="color:red">Outstanding</td>
+                    <td ><a href  ="{% url 'create_receipt' bill.id %}" style='color:red'><i class="material-icons">add</i> Create Receipt.</a></td>
+                {% else %}
+                    <td style="color:green">Paid: Receipt no. {{bill.receipt.id}}</td>
+                    <td ><a href  ="{% url 'create_receipt' bill.id %}" style='color:green'><i class="material-icons">edit</i> Edit Receipt.</a></td>
+
+                {% endif %}
+            </tr>            
+            <tr>
+                
+            </tr>
+        </table>
+            <table style="width:100%" class="bordered">
+                <tr>
+                <th style="width:70%" class="center-align bordered">Particulars</th>
+                <th class="right-align">Amount (Rs.)</th> 
+                </tr>
+                
+                <tr>
+                    <td>Municipal Tax</td>
+                    <td class="right-align">{{bill.municipal_tax}}</td> 
+                </tr>
+                
+                </tr>
+                    <tr>
+                    <td>Maintenance Charges</td>
+                    <td class="right-align">{{bill.maintenance}}</td> 
+                </tr>
+
+                <tr>
+                   <td>Water Charges</td>
+                   <td class="right-align">{{bill.water_charges}}</td> 
+                </tr>
+                
+                <tr>
+                    <td>Parking Charges - Car/Scooter/Stilt</td>
+                    <td class="right-align">{{bill.parking_charges}}</td> 
+                </tr>
+
+                <tr>
+                    <td>Sinking Fund</td>
+                    <td class="right-align">{{bill.sinking_fund}}</td> 
+                </tr>
+
+                <tr>
+                        <td>Building Repair Fund</td>
+                        <td class="right-align">{{bill.building_repair}}</td> 
+                </tr>
+
+                <tr>
+                        <td>Electricity Insurance Charges</td>
+                        <td class="right-align">{{bill.elec_ins_chgs}}</td> 
+                </tr>
+
+                <tr>
+                        <td>Non Occupancy Charges</td>
+                        <td class="right-align">{{bill.noc_charges}}</td> 
+                </tr>
+
+                <tr>
+                        <td>Additional Items</td>
+                        <td class="right-align">{{bill.add_item_amt_1}}</td> 
+                </tr>
+
+                <tr>
+                        <td>Additional Items</td>
+                        <td class="right-align">{{bill.add_item_amt_2}}</td> 
+                </tr>
+
+                <tr>
+                        <td class="right-align"><strong>TOTAL</strong></td>
+                        <td class="right-align"><strong>{{bill.total}}</strong></td> 
+                </tr>
+
+            </table>
+        
+
+        </div>
+    
+        {% if bill.receipt %}
+            
+            <div style="border: 1px solid black; padding:5px 10px 5px 10px;">
+                <br>
+                <div style="font-weight:bold; font-size:30px ;">
+                    RECEIPT
+                   
+                    <div style="font-weight:medium; font-size:20px ;">
+                        <strong>Paid on: </strong>{{bill.receipt.paid_on}}<br>
+                        <hr>
+                        <strong>Paid by: </strong>{{bill.receipt.payment_mode}} drawn on {{bill.receipt.drawn_on}} vide transaction {{bill.receipt.transaction_no}}.<br>
+                    </div>
+                    <h5>AMOUNT: {{bill.receipt.received_amount}}</h5>
+                </div> 
+            </div>
+
+        {% endif %}
+
+    
+{% endblock content %}
