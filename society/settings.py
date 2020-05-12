@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'bootstrap4',
     'billing.apps.BillingConfig',
     'members.apps.MembersConfig',
-    
     ]
 
 MIDDLEWARE = [
