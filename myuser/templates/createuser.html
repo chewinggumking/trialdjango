@@ -1,0 +1,7 @@
+<form action="{% url 'user_created' %}" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    
+    <button value="SUBMI">Create User</button>
+
+</form>

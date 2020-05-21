@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'bootstrap4',
     'billing.apps.BillingConfig',
     'members.apps.MembersConfig',
+    'myuser',
+    
     ]
 
 MIDDLEWARE = [
@@ -134,3 +136,10 @@ STATICFILES_DIRS = [
 
 #Debug toolbar
 INTERNAL_IPS = ['127.0.0.1']
+
+# Custom User setting accoring to the documentation
+# https://docs.djangoproject.com/en/2.2/topics/auth/customizing/#a-full-example
+AUTH_USER_MODEL = 'myuser.SiteUser'
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'

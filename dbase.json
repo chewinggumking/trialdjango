@@ -1,0 +1,2572 @@
+[
+{
+    "model": "billing.billdetails",
+    "pk": 1,
+    "fields": {
+        "flat_type": "3",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "elec_ins_chgs": "610.00"
+    }
+},
+{
+    "model": "billing.billdetails",
+    "pk": 2,
+    "fields": {
+        "flat_type": "1",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "elec_ins_chgs": "510.00"
+    }
+},
+{
+    "model": "billing.billdetails",
+    "pk": 3,
+    "fields": {
+        "flat_type": "2",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "elec_ins_chgs": "510.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 400,
+    "fields": {
+        "flat_name": 1,
+        "bill_date": "2018-04-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": true,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 401,
+    "fields": {
+        "flat_name": 2,
+        "bill_date": "2018-04-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": true,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 402,
+    "fields": {
+        "flat_name": 3,
+        "bill_date": "2018-04-01",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": true,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 403,
+    "fields": {
+        "flat_name": 4,
+        "bill_date": "2018-04-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": true,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "362.50",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 404,
+    "fields": {
+        "flat_name": 5,
+        "bill_date": "2018-04-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": true,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 405,
+    "fields": {
+        "flat_name": 6,
+        "bill_date": "2018-04-01",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": true,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 406,
+    "fields": {
+        "flat_name": 7,
+        "bill_date": "2018-04-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": true,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 407,
+    "fields": {
+        "flat_name": 9,
+        "bill_date": "2018-04-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": true,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 408,
+    "fields": {
+        "flat_name": 10,
+        "bill_date": "2018-04-01",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": true,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 409,
+    "fields": {
+        "flat_name": 11,
+        "bill_date": "2018-04-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": true,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 410,
+    "fields": {
+        "flat_name": 12,
+        "bill_date": "2018-04-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": true,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "362.50",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 411,
+    "fields": {
+        "flat_name": 13,
+        "bill_date": "2018-04-01",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": true,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 412,
+    "fields": {
+        "flat_name": 14,
+        "bill_date": "2018-04-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": true,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 413,
+    "fields": {
+        "flat_name": 15,
+        "bill_date": "2018-04-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": true,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 414,
+    "fields": {
+        "flat_name": 17,
+        "bill_date": "2018-04-01",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 415,
+    "fields": {
+        "flat_name": 18,
+        "bill_date": "2018-04-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 416,
+    "fields": {
+        "flat_name": 19,
+        "bill_date": "2018-04-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 417,
+    "fields": {
+        "flat_name": 20,
+        "bill_date": "2018-04-01",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 418,
+    "fields": {
+        "flat_name": 21,
+        "bill_date": "2018-04-01",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 419,
+    "fields": {
+        "flat_name": 22,
+        "bill_date": "2018-04-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 420,
+    "fields": {
+        "flat_name": 23,
+        "bill_date": "2018-04-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 421,
+    "fields": {
+        "flat_name": 24,
+        "bill_date": "2018-04-01",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "376.30",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 422,
+    "fields": {
+        "flat_name": 1,
+        "bill_date": "2018-04-09",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 423,
+    "fields": {
+        "flat_name": 2,
+        "bill_date": "2018-05-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 424,
+    "fields": {
+        "flat_name": 3,
+        "bill_date": "2018-05-01",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 425,
+    "fields": {
+        "flat_name": 4,
+        "bill_date": "2018-05-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "362.50",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 426,
+    "fields": {
+        "flat_name": 5,
+        "bill_date": "2018-05-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 427,
+    "fields": {
+        "flat_name": 6,
+        "bill_date": "2018-05-01",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 428,
+    "fields": {
+        "flat_name": 7,
+        "bill_date": "2018-05-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 429,
+    "fields": {
+        "flat_name": 9,
+        "bill_date": "2018-05-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 430,
+    "fields": {
+        "flat_name": 10,
+        "bill_date": "2018-05-01",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 431,
+    "fields": {
+        "flat_name": 11,
+        "bill_date": "2018-05-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 432,
+    "fields": {
+        "flat_name": 12,
+        "bill_date": "2018-05-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "362.50",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 433,
+    "fields": {
+        "flat_name": 13,
+        "bill_date": "2018-05-01",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 434,
+    "fields": {
+        "flat_name": 14,
+        "bill_date": "2018-05-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 435,
+    "fields": {
+        "flat_name": 15,
+        "bill_date": "2018-05-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 436,
+    "fields": {
+        "flat_name": 17,
+        "bill_date": "2018-05-01",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 437,
+    "fields": {
+        "flat_name": 18,
+        "bill_date": "2018-05-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 438,
+    "fields": {
+        "flat_name": 19,
+        "bill_date": "2018-05-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 439,
+    "fields": {
+        "flat_name": 20,
+        "bill_date": "2018-05-01",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 440,
+    "fields": {
+        "flat_name": 21,
+        "bill_date": "2018-05-01",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 441,
+    "fields": {
+        "flat_name": 22,
+        "bill_date": "2018-05-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 442,
+    "fields": {
+        "flat_name": 23,
+        "bill_date": "2018-05-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 443,
+    "fields": {
+        "flat_name": 24,
+        "bill_date": "2018-05-01",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "376.30",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 444,
+    "fields": {
+        "flat_name": 1,
+        "bill_date": "2018-04-09",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 445,
+    "fields": {
+        "flat_name": 2,
+        "bill_date": "2018-06-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 446,
+    "fields": {
+        "flat_name": 3,
+        "bill_date": "2018-06-01",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 447,
+    "fields": {
+        "flat_name": 4,
+        "bill_date": "2018-06-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "362.50",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 448,
+    "fields": {
+        "flat_name": 5,
+        "bill_date": "2018-06-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 449,
+    "fields": {
+        "flat_name": 6,
+        "bill_date": "2018-06-01",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 450,
+    "fields": {
+        "flat_name": 7,
+        "bill_date": "2018-06-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 451,
+    "fields": {
+        "flat_name": 9,
+        "bill_date": "2018-06-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 452,
+    "fields": {
+        "flat_name": 10,
+        "bill_date": "2018-06-01",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 453,
+    "fields": {
+        "flat_name": 11,
+        "bill_date": "2018-06-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 454,
+    "fields": {
+        "flat_name": 12,
+        "bill_date": "2018-06-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "362.50",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 455,
+    "fields": {
+        "flat_name": 13,
+        "bill_date": "2018-06-01",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 456,
+    "fields": {
+        "flat_name": 14,
+        "bill_date": "2018-06-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 457,
+    "fields": {
+        "flat_name": 15,
+        "bill_date": "2018-06-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 458,
+    "fields": {
+        "flat_name": 17,
+        "bill_date": "2018-06-01",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 459,
+    "fields": {
+        "flat_name": 18,
+        "bill_date": "2018-06-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 460,
+    "fields": {
+        "flat_name": 19,
+        "bill_date": "2018-06-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 461,
+    "fields": {
+        "flat_name": 20,
+        "bill_date": "2018-06-01",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 462,
+    "fields": {
+        "flat_name": 21,
+        "bill_date": "2018-06-01",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 463,
+    "fields": {
+        "flat_name": 22,
+        "bill_date": "2018-06-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 464,
+    "fields": {
+        "flat_name": 23,
+        "bill_date": "2018-06-01",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 465,
+    "fields": {
+        "flat_name": 24,
+        "bill_date": "2018-06-01",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "376.30",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 466,
+    "fields": {
+        "flat_name": 1,
+        "bill_date": "2020-04-08",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 467,
+    "fields": {
+        "flat_name": 2,
+        "bill_date": "2020-04-08",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 468,
+    "fields": {
+        "flat_name": 3,
+        "bill_date": "2020-04-08",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 469,
+    "fields": {
+        "flat_name": 4,
+        "bill_date": "2020-04-08",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "362.50",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 470,
+    "fields": {
+        "flat_name": 5,
+        "bill_date": "2020-04-08",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 471,
+    "fields": {
+        "flat_name": 6,
+        "bill_date": "2020-04-08",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 472,
+    "fields": {
+        "flat_name": 7,
+        "bill_date": "2020-04-08",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 473,
+    "fields": {
+        "flat_name": 9,
+        "bill_date": "2020-04-08",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 474,
+    "fields": {
+        "flat_name": 10,
+        "bill_date": "2020-04-08",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 475,
+    "fields": {
+        "flat_name": 11,
+        "bill_date": "2020-04-08",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 476,
+    "fields": {
+        "flat_name": 12,
+        "bill_date": "2020-04-08",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "362.50",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 477,
+    "fields": {
+        "flat_name": 13,
+        "bill_date": "2020-04-08",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 478,
+    "fields": {
+        "flat_name": 14,
+        "bill_date": "2020-04-08",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 479,
+    "fields": {
+        "flat_name": 15,
+        "bill_date": "2020-04-08",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 480,
+    "fields": {
+        "flat_name": 17,
+        "bill_date": "2020-04-08",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 481,
+    "fields": {
+        "flat_name": 18,
+        "bill_date": "2020-04-08",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 482,
+    "fields": {
+        "flat_name": 19,
+        "bill_date": "2020-04-08",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 483,
+    "fields": {
+        "flat_name": 20,
+        "bill_date": "2020-04-08",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 484,
+    "fields": {
+        "flat_name": 21,
+        "bill_date": "2020-04-08",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 485,
+    "fields": {
+        "flat_name": 22,
+        "bill_date": "2020-04-08",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 486,
+    "fields": {
+        "flat_name": 23,
+        "bill_date": "2020-04-08",
+        "municipal_tax": "1452.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "95.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "510.00",
+        "noc_charges": "0.00",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.flatbill",
+    "pk": 487,
+    "fields": {
+        "flat_name": 24,
+        "bill_date": "2020-04-08",
+        "municipal_tax": "2036.00",
+        "maintenance": "1005.00",
+        "water_charges": "415.00",
+        "parking_charges": "100.00",
+        "sinking_fund": "133.00",
+        "building_repair": "1500.00",
+        "is_paid": false,
+        "elec_ins_chgs": "610.00",
+        "noc_charges": "376.30",
+        "add_item_name_1": "",
+        "add_item_name_2": "",
+        "add_item_amt_1": "0.00",
+        "add_item_amt_2": "0.00"
+    }
+},
+{
+    "model": "billing.receipt",
+    "pk": 5,
+    "fields": {
+        "related_bill": 409,
+        "paid_on": "2018-04-11",
+        "payment_mode": "NEFT",
+        "drawn_on": "HSBC",
+        "transaction_no": "55668845",
+        "received_amount": "5077.00"
+    }
+},
+{
+    "model": "billing.receipt",
+    "pk": 6,
+    "fields": {
+        "related_bill": 410,
+        "paid_on": "2018-04-11",
+        "payment_mode": "Cheque",
+        "drawn_on": "Bank of Baroda",
+        "transaction_no": "878954",
+        "received_amount": "5439.50"
+    }
+},
+{
+    "model": "billing.receipt",
+    "pk": 7,
+    "fields": {
+        "related_bill": 411,
+        "paid_on": "2018-04-11",
+        "payment_mode": "NEFT",
+        "drawn_on": "HDFC Bank",
+        "transaction_no": "78946555",
+        "received_amount": "5799.00"
+    }
+},
+{
+    "model": "billing.receipt",
+    "pk": 8,
+    "fields": {
+        "related_bill": 412,
+        "paid_on": "2018-04-11",
+        "payment_mode": "Cheque",
+        "drawn_on": "HSBC",
+        "transaction_no": "456652",
+        "received_amount": "5077.00"
+    }
+},
+{
+    "model": "billing.receipt",
+    "pk": 9,
+    "fields": {
+        "related_bill": 413,
+        "paid_on": "2018-04-11",
+        "payment_mode": "Cheque",
+        "drawn_on": "HDFC Bank",
+        "transaction_no": "665549",
+        "received_amount": "5077.00"
+    }
+},
+{
+    "model": "billing.receipt",
+    "pk": 10,
+    "fields": {
+        "related_bill": 400,
+        "paid_on": "2018-04-11",
+        "payment_mode": "Cheque",
+        "drawn_on": "Bank of Baroda",
+        "transaction_no": "556688",
+        "received_amount": "5077.00"
+    }
+},
+{
+    "model": "members.flat",
+    "pk": 1,
+    "fields": {
+        "flat_number": "101",
+        "wing": "A",
+        "slug": "101A"
+    }
+},
+{
+    "model": "members.flat",
+    "pk": 2,
+    "fields": {
+        "flat_number": "102",
+        "wing": "A",
+        "slug": "102A"
+    }
+},
+{
+    "model": "members.flat",
+    "pk": 3,
+    "fields": {
+        "flat_number": "103",
+        "wing": "A",
+        "slug": "103A"
+    }
+},
+{
+    "model": "members.flat",
+    "pk": 4,
+    "fields": {
+        "flat_number": "201",
+        "wing": "A",
+        "slug": "201A"
+    }
+},
+{
+    "model": "members.flat",
+    "pk": 5,
+    "fields": {
+        "flat_number": "202",
+        "wing": "A",
+        "slug": "202A"
+    }
+},
+{
+    "model": "members.flat",
+    "pk": 6,
+    "fields": {
+        "flat_number": "203",
+        "wing": "A",
+        "slug": "203A"
+    }
+},
+{
+    "model": "members.flat",
+    "pk": 7,
+    "fields": {
+        "flat_number": "301",
+        "wing": "A",
+        "slug": "301A"
+    }
+},
+{
+    "model": "members.flat",
+    "pk": 9,
+    "fields": {
+        "flat_number": "302",
+        "wing": "A",
+        "slug": "302A"
+    }
+},
+{
+    "model": "members.flat",
+    "pk": 10,
+    "fields": {
+        "flat_number": "303",
+        "wing": "A",
+        "slug": "303A"
+    }
+},
+{
+    "model": "members.flat",
+    "pk": 11,
+    "fields": {
+        "flat_number": "401",
+        "wing": "A",
+        "slug": "401A"
+    }
+},
+{
+    "model": "members.flat",
+    "pk": 12,
+    "fields": {
+        "flat_number": "402",
+        "wing": "A",
+        "slug": "402A"
+    }
+},
+{
+    "model": "members.flat",
+    "pk": 13,
+    "fields": {
+        "flat_number": "403",
+        "wing": "A",
+        "slug": "403A"
+    }
+},
+{
+    "model": "members.flat",
+    "pk": 14,
+    "fields": {
+        "flat_number": "501",
+        "wing": "A",
+        "slug": "501A"
+    }
+},
+{
+    "model": "members.flat",
+    "pk": 15,
+    "fields": {
+        "flat_number": "502",
+        "wing": "A",
+        "slug": "502A"
+    }
+},
+{
+    "model": "members.flat",
+    "pk": 17,
+    "fields": {
+        "flat_number": "503",
+        "wing": "A",
+        "slug": "503A"
+    }
+},
+{
+    "model": "members.flat",
+    "pk": 18,
+    "fields": {
+        "flat_number": "601",
+        "wing": "A",
+        "slug": "601A"
+    }
+},
+{
+    "model": "members.flat",
+    "pk": 19,
+    "fields": {
+        "flat_number": "602",
+        "wing": "A",
+        "slug": "602A"
+    }
+},
+{
+    "model": "members.flat",
+    "pk": 20,
+    "fields": {
+        "flat_number": "603",
+        "wing": "A",
+        "slug": "603A"
+    }
+},
+{
+    "model": "members.flat",
+    "pk": 21,
+    "fields": {
+        "flat_number": "603",
+        "wing": "B",
+        "slug": "603B"
+    }
+},
+{
+    "model": "members.flat",
+    "pk": 22,
+    "fields": {
+        "flat_number": "701",
+        "wing": "A",
+        "slug": "701A"
+    }
+},
+{
+    "model": "members.flat",
+    "pk": 23,
+    "fields": {
+        "flat_number": "702",
+        "wing": "A",
+        "slug": "702A"
+    }
+},
+{
+    "model": "members.flat",
+    "pk": 24,
+    "fields": {
+        "flat_number": "703",
+        "wing": "A",
+        "slug": "703A"
+    }
+},
+{
+    "model": "members.guest",
+    "pk": 1,
+    "fields": {
+        "flat_number": 1,
+        "first_name": "Ravindra & Sharmila",
+        "last_name": "Khot",
+        "mobile": "8855469987"
+    }
+},
+{
+    "model": "members.guest",
+    "pk": 2,
+    "fields": {
+        "flat_number": 17,
+        "first_name": "Niranjana",
+        "last_name": "Rao",
+        "mobile": "9820022679"
+    }
+},
+{
+    "model": "members.guest",
+    "pk": 3,
+    "fields": {
+        "flat_number": 24,
+        "first_name": "Something",
+        "last_name": "Tandon",
+        "mobile": "5465489765"
+    }
+},
+{
+    "model": "members.guest",
+    "pk": 4,
+    "fields": {
+        "flat_number": 23,
+        "first_name": "Samina & Jameel",
+        "last_name": "Khan",
+        "mobile": "9875465213"
+    }
+},
+{
+    "model": "members.guest",
+    "pk": 5,
+    "fields": {
+        "flat_number": 22,
+        "first_name": "Lubna",
+        "last_name": "Ahmed",
+        "mobile": "8756543215"
+    }
+},
+{
+    "model": "members.guest",
+    "pk": 7,
+    "fields": {
+        "flat_number": 20,
+        "first_name": "R.H.",
+        "last_name": "Batliwala",
+        "mobile": "9856563232"
+    }
+},
+{
+    "model": "members.guest",
+    "pk": 8,
+    "fields": {
+        "flat_number": 19,
+        "first_name": "J.J.",
+        "last_name": "Hudli",
+        "mobile": "5698974565"
+    }
+},
+{
+    "model": "members.guest",
+    "pk": 9,
+    "fields": {
+        "flat_number": 18,
+        "first_name": "A",
+        "last_name": "Modak",
+        "mobile": "9874552546"
+    }
+},
+{
+    "model": "members.guest",
+    "pk": 10,
+    "fields": {
+        "flat_number": 15,
+        "first_name": "Captain",
+        "last_name": "Juwale",
+        "mobile": "9852321235"
+    }
+},
+{
+    "model": "members.guest",
+    "pk": 11,
+    "fields": {
+        "flat_number": 14,
+        "first_name": "Abhijit",
+        "last_name": "Upadhye",
+        "mobile": "9821445556"
+    }
+},
+{
+    "model": "members.guest",
+    "pk": 12,
+    "fields": {
+        "flat_number": 13,
+        "first_name": "N.J.",
+        "last_name": "Khan",
+        "mobile": "9832112546"
+    }
+},
+{
+    "model": "members.guest",
+    "pk": 13,
+    "fields": {
+        "flat_number": 12,
+        "first_name": "Habiba",
+        "last_name": "Dalvi",
+        "mobile": "9821455233"
+    }
+},
+{
+    "model": "members.guest",
+    "pk": 14,
+    "fields": {
+        "flat_number": 11,
+        "first_name": "Theresa",
+        "last_name": "D'Souza",
+        "mobile": "9835569984"
+    }
+},
+{
+    "model": "members.guest",
+    "pk": 15,
+    "fields": {
+        "flat_number": 10,
+        "first_name": "Maya",
+        "last_name": "Handa",
+        "mobile": "9845215545"
+    }
+},
+{
+    "model": "members.guest",
+    "pk": 16,
+    "fields": {
+        "flat_number": 9,
+        "first_name": "Sukumar",
+        "last_name": "Jatania",
+        "mobile": "9825564587"
+    }
+},
+{
+    "model": "members.guest",
+    "pk": 17,
+    "fields": {
+        "flat_number": 7,
+        "first_name": "Naresh",
+        "last_name": "Sharma",
+        "mobile": "9823655455"
+    }
+},
+{
+    "model": "members.guest",
+    "pk": 18,
+    "fields": {
+        "flat_number": 6,
+        "first_name": "Narendra",
+        "last_name": "Jha",
+        "mobile": "9854551254"
+    }
+},
+{
+    "model": "members.guest",
+    "pk": 19,
+    "fields": {
+        "flat_number": 5,
+        "first_name": "R.",
+        "last_name": "Nesarikar",
+        "mobile": "9836521445"
+    }
+},
+{
+    "model": "members.guest",
+    "pk": 20,
+    "fields": {
+        "flat_number": 4,
+        "first_name": "Ravider",
+        "last_name": "Paul Singh",
+        "mobile": "9755544411"
+    }
+},
+{
+    "model": "members.guest",
+    "pk": 21,
+    "fields": {
+        "flat_number": 3,
+        "first_name": "A",
+        "last_name": "Sharma",
+        "mobile": "9855452124"
+    }
+},
+{
+    "model": "members.guest",
+    "pk": 22,
+    "fields": {
+        "flat_number": 2,
+        "first_name": "Gargi",
+        "last_name": "Mankame",
+        "mobile": "6544223213"
+    }
+},
+{
+    "model": "members.rentalstatus",
+    "pk": 2,
+    "fields": {
+        "flat_number": 1,
+        "is_rented": false
+    }
+},
+{
+    "model": "members.rentalstatus",
+    "pk": 3,
+    "fields": {
+        "flat_number": 2,
+        "is_rented": false
+    }
+},
+{
+    "model": "members.rentalstatus",
+    "pk": 4,
+    "fields": {
+        "flat_number": 3,
+        "is_rented": false
+    }
+},
+{
+    "model": "members.rentalstatus",
+    "pk": 5,
+    "fields": {
+        "flat_number": 4,
+        "is_rented": true
+    }
+},
+{
+    "model": "members.rentalstatus",
+    "pk": 6,
+    "fields": {
+        "flat_number": 5,
+        "is_rented": false
+    }
+},
+{
+    "model": "members.rentalstatus",
+    "pk": 7,
+    "fields": {
+        "flat_number": 6,
+        "is_rented": false
+    }
+},
+{
+    "model": "members.rentalstatus",
+    "pk": 8,
+    "fields": {
+        "flat_number": 7,
+        "is_rented": false
+    }
+},
+{
+    "model": "members.rentalstatus",
+    "pk": 9,
+    "fields": {
+        "flat_number": 9,
+        "is_rented": false
+    }
+},
+{
+    "model": "members.rentalstatus",
+    "pk": 10,
+    "fields": {
+        "flat_number": 10,
+        "is_rented": false
+    }
+},
+{
+    "model": "members.rentalstatus",
+    "pk": 11,
+    "fields": {
+        "flat_number": 11,
+        "is_rented": false
+    }
+},
+{
+    "model": "members.rentalstatus",
+    "pk": 12,
+    "fields": {
+        "flat_number": 12,
+        "is_rented": true
+    }
+},
+{
+    "model": "members.rentalstatus",
+    "pk": 13,
+    "fields": {
+        "flat_number": 13,
+        "is_rented": false
+    }
+},
+{
+    "model": "members.rentalstatus",
+    "pk": 14,
+    "fields": {
+        "flat_number": 14,
+        "is_rented": false
+    }
+},
+{
+    "model": "members.rentalstatus",
+    "pk": 15,
+    "fields": {
+        "flat_number": 15,
+        "is_rented": false
+    }
+},
+{
+    "model": "members.rentalstatus",
+    "pk": 16,
+    "fields": {
+        "flat_number": 17,
+        "is_rented": false
+    }
+},
+{
+    "model": "members.rentalstatus",
+    "pk": 17,
+    "fields": {
+        "flat_number": 18,
+        "is_rented": false
+    }
+},
+{
+    "model": "members.rentalstatus",
+    "pk": 18,
+    "fields": {
+        "flat_number": 19,
+        "is_rented": false
+    }
+},
+{
+    "model": "members.rentalstatus",
+    "pk": 19,
+    "fields": {
+        "flat_number": 20,
+        "is_rented": false
+    }
+},
+{
+    "model": "members.rentalstatus",
+    "pk": 20,
+    "fields": {
+        "flat_number": 21,
+        "is_rented": false
+    }
+},
+{
+    "model": "members.rentalstatus",
+    "pk": 21,
+    "fields": {
+        "flat_number": 22,
+        "is_rented": false
+    }
+},
+{
+    "model": "members.rentalstatus",
+    "pk": 22,
+    "fields": {
+        "flat_number": 23,
+        "is_rented": false
+    }
+},
+{
+    "model": "members.rentalstatus",
+    "pk": 23,
+    "fields": {
+        "flat_number": 24,
+        "is_rented": true
+    }
+},
+{
+    "model": "members.vehicle",
+    "pk": 1,
+    "fields": {
+        "vehicle": "FWST",
+        "flat": 14
+    }
+},
+{
+    "model": "members.vehicle",
+    "pk": 2,
+    "fields": {
+        "vehicle": "FWOU",
+        "flat": 14
+    }
+},
+{
+    "model": "members.vehicle",
+    "pk": 3,
+    "fields": {
+        "vehicle": "FWOU",
+        "flat": 14
+    }
+}
+]
