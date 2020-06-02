@@ -2,8 +2,9 @@
 
 {% block content %}
 
-{% for stuff in object %}
-{{ stuff }}
+{% for flat in object %}
+{{ flat }}
+{{ flat.vehicle }}
 {% endfor %}
 
 
