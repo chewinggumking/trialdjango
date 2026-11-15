@@ -1,2 +1,3 @@
 *.pyc
-*.pyo
+*.pyovenv/
+__pycache__/
