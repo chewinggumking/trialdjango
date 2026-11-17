@@ -1,0 +1,41 @@
+<div id="receipt-section" class="card shadow-sm border-0 border-start border-primary border-4 mt-4">
+    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+        <h5 class="fw-bold mb-0 text-primary">
+            <i class="bi bi-receipt me-2"></i>{% if edit %}Edit Receipt{% else %}Record Payment & Issue Receipt{% endif %}
+        </h5>
+        <span class="badge bg-light text-dark border">Bill #{{ bill.id }} (₹{{ bill.total }})</span>
+    </div>
+    <div class="card-body p-4">
+        <form hx-post="{% url 'create_receipt' bill.id %}"
+              hx-target="#receipt-section"
+              hx-swap="outerHTML">
+            {% csrf_token %}
+
+            <div class="row g-3">
+                {% for field in form %}
+                    <div class="col-md-6 mb-3">
+                        <label for="{{ field.id_for_label }}" class="form-label fw-semibold">
+                            {{ field.label }}
+                        </label>
+                        {{ field }}
+                        {% if field.help_text %}
+                            <div class="form-text small">{{ field.help_text }}</div>
+                        {% endif %}
+                        {% for error in field.errors %}
+                            <div class="text-danger small mt-1">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="d-flex justify-content-end gap-2 mt-3">
+                <a href="{% url 'bill_view' bill.id %}" class="btn btn-outline-secondary">
+                    Cancel
+                </a>
+                <button type="submit" class="btn btn-success">
+                    <i class="bi bi-check-circle-fill me-1"></i> Save & Issue Receipt
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

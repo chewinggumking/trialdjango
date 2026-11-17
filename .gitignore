@@ -1,3 +1,5 @@
 *.pyc
-*.pyovenv/
+*.pyo
 __pycache__/
+venv/
+=2.2.10

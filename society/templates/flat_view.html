@@ -1,24 +1,73 @@
-{% extends 'index1.html' %}
+{% extends 'base.html' %}
+
+{% block title %}Flats Overview{% endblock %}
 
 {% block content %}
-<ul class="list-group">
-    <li class="collection-header"><h4>Flats</h4></li>
-    {% for flat in flat_list%}
+<div class="row align-items-center mb-4 g-3">
+    <div class="col-md-6">
+        <h2 class="h3 mb-1 fw-bold text-dark">
+            <i class="bi bi-door-open-fill text-primary me-2"></i>Apartment Flats
+        </h2>
+        <p class="text-muted mb-0">Browse and filter flats by wing, occupancy status, or resident.</p>
+    </div>
+    <div class="col-md-6 text-md-end">
+        <a href="{% url 'add_flats' %}" class="btn btn-primary shadow-sm">
+            <i class="bi bi-plus-circle-fill me-1"></i> Add New Flat
+        </a>
+    </div>
+</div>
 
+<!-- Filters Bar with HTMX -->
+<div class="card shadow-sm border-0 mb-4">
+    <div class="card-body p-3">
+        <form id="flat-filters"
+              hx-get="{% url 'all_flats' %}"
+              hx-trigger="change from:select, input changed delay:250ms from:input[type='text']"
+              hx-target="#flat-grid"
+              hx-indicator="#flat-spinner"
+              class="row g-2 align-items-center">
+            
+            <div class="col-md-5">
+                <div class="input-group">
+                    <span class="input-group-text bg-light border-end-0">
+                        <i class="bi bi-search text-muted"></i>
+                    </span>
+                    <input type="text"
+                           name="q"
+                           value="{{ q }}"
+                           class="form-control border-start-0 bg-light"
+                           placeholder="Search flat number, wing, or resident...">
+                </div>
+            </div>
 
-    <li class="list-group-item"><a  href = "{{flat.get_absolute_url}}" >{{flat}}</a> - {{flat.guest}} 
-      {% if flat.rentalstatus.is_rented %}
-        <span class="rented  font-weight-bold" >{{flat.rentalstatus}}</span>
-      {% else %}
-        <span class="notrented  font-weight-bold" >{{flat.rentalstatus}}</span></li>
-      {% endif %}
-    
-    {% endfor %}
-  </ul>
+            <div class="col-md-3">
+                <select name="wing" class="form-select bg-light">
+                    <option value="">All Wings</option>
+                    {% for w in wings %}
+                        <option value="{{ w }}" {% if selected_wing == w %}selected{% endif %}>Wing {{ w }}</option>
+                    {% endfor %}
+                </select>
+            </div>
 
-  <a  href = "{% url 'add_flats' %}" class="btn btn-floating btn-large cyan right">
-    <i class="material-icons">add</i>
-  </a>
+            <div class="col-md-3">
+                <select name="status" class="form-select bg-light">
+                    <option value="">All Occupancy</option>
+                    <option value="owner" {% if selected_status == 'owner' %}selected{% endif %}>Owner Occupied</option>
+                    <option value="rented" {% if selected_status == 'rented' %}selected{% endif %}>Rented</option>
+                </select>
+            </div>
 
+            <div class="col-md-1 text-center">
+                <div id="flat-spinner" class="htmx-indicator spinner-border spinner-border-sm text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 
+<!-- Flat Grid Container -->
+<div id="flat-grid">
+    {% include 'members/partials/flat_cards.html' %}
+</div>
 {% endblock content %}

@@ -1,38 +1,65 @@
-{% extends 'index1.html' %}
+{% extends 'base.html' %}
+
+{% block title %}Members List{% endblock %}
 
 {% block content %}
-<table class="table table-bordered">
-    <thead class="thead-light">
-      <tr>
-          <th>Flat No.</th>
-          <th>Member</th>
-          <th>Mobile</th>
-          <th>Action</th>
-      </tr>
-    </thead>
-    {% for guest in guests %}
-       <tbody>
-          <tr>
-            <td>{{guest.flat_number}}</td>
-            <td>{{guest.full_name }}</td>
-            <td>{{guest.mobile}}</td>
-            <td><a href =  "delete/{{guest.id}}" class="right" ><i class="material-icons">delete</i></a>
-                <a href =  "edit/{{guest.id}}" class="right" ><i class="material-icons">edit</i></a></td>
-          </tr>
-        </tbody>
-    
-    <!-- <div class="card-panel hoverable"> 
-        {{guest.full_name }} {{guest.mobile}}
-        <a href =  "delete/{{guest.id}}" class="right" ><i class="material-icons">delete</i></a>
-        <a href =  "edit/{{guest.id}}" class="right" ><i class="material-icons">edit</i></a>
-            
-    </div> -->
-    {% endfor %}
-</table>
+<div class="row align-items-center mb-4 g-3">
+    <div class="col-md-6">
+        <h2 class="h3 mb-1 fw-bold text-dark">
+            <i class="bi bi-people-fill text-primary me-2"></i>Society Members
+        </h2>
+        <p class="text-muted mb-0">View, search, and manage registered residents and flat occupants.</p>
+    </div>
+    <div class="col-md-6 text-md-end">
+        <a href="{% url 'add_member' %}" class="btn btn-primary shadow-sm">
+            <i class="bi bi-person-plus-fill me-1"></i> Add New Member
+        </a>
+    </div>
+</div>
 
-<a  href = "{%url 'add_member'%}" class="btn btn-floating btn-large cyan right">
-    <i class="material-icons">add</i>
-</a>
+<div class="card shadow-sm border-0 mb-4">
+    <div class="card-body p-3">
+        <div class="row g-2 align-items-center">
+            <div class="col">
+                <div class="input-group">
+                    <span class="input-group-text bg-light border-end-0">
+                        <i class="bi bi-search text-muted"></i>
+                    </span>
+                    <input type="text"
+                           name="q"
+                           value="{{ q }}"
+                           class="form-control border-start-0 bg-light"
+                           placeholder="Type to search by name, flat number, wing, or mobile..."
+                           hx-get="{% url 'home' %}"
+                           hx-trigger="input changed delay:250ms, search"
+                           hx-target="#members-tbody"
+                           hx-indicator="#search-spinner">
+                </div>
+            </div>
+            <div class="col-auto">
+                <div id="search-spinner" class="htmx-indicator spinner-border spinner-border-sm text-primary ms-2" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-
+<div class="card shadow-sm border-0">
+    <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th scope="col" style="width: 20%;">Flat Number</th>
+                    <th scope="col" style="width: 35%;">Member Name</th>
+                    <th scope="col" style="width: 25%;">Mobile</th>
+                    <th scope="col" style="width: 20%;" class="text-end">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="members-tbody">
+                {% include 'members/partials/guest_rows.html' %}
+            </tbody>
+        </table>
+    </div>
+</div>
 {% endblock content %}

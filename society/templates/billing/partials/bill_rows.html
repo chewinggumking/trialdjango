@@ -1,0 +1,10 @@
+{% for bill in bills %}
+    {% include 'billing/partials/bill_single_row.html' with bill=bill %}
+{% empty %}
+    <tr>
+        <td colspan="5" class="text-center py-5 text-muted">
+            <i class="bi bi-receipt-cutoff fs-2 d-block mb-2"></i>
+            No bills found matching your filter criteria.
+        </td>
+    </tr>
+{% endfor %}

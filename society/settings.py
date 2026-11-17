@@ -11,13 +11,14 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+from pathlib import Path
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
+# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'z9aqgl@78s7v9hct3r#w9&t_p*1c9$!g_%6r3u+tu1ufier$x*'
@@ -25,7 +26,7 @@ SECRET_KEY = 'z9aqgl@78s7v9hct3r#w9&t_p*1c9$!g_%6r3u+tu1ufier$x*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.73', 'localhost', '127.0.0.1',]
+ALLOWED_HOSTS = ['192.168.1.73', 'localhost', '127.0.0.1', 'testserver']
 
 
 # Application definition
@@ -37,22 +38,23 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #debug toolbar
+    # debug toolbar
     'debug_toolbar',
     'bootstrap4',
+    'django_htmx',
     'billing.apps.BillingConfig',
     'members.apps.MembersConfig',
     'myuser',
-    
-    ]
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    #debug toolbar
+    # debug toolbar
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'django_htmx.middleware.HtmxMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -63,7 +65,7 @@ ROOT_URLCONF = 'society.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, "society/templates")],
+        'DIRS': [BASE_DIR / 'society' / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -80,18 +82,20 @@ WSGI_APPLICATION = 'society.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/2.0/ref/settings/#databases
+# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 
 # Password validation
-# https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
+# https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -110,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Internationalization
-# https://docs.djangoproject.com/en/2.0/topics/i18n/
+# https://docs.djangoproject.com/en/5.2/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
@@ -118,27 +122,24 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_L10N = True
-
 USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.0/howto/static-files/
+# https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
+    BASE_DIR / 'static',
 ]
-# STATIC_ROOT  = os.path.join(BASE_DIR, "static_cdn")
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
+# STATIC_ROOT  = BASE_DIR / 'static_cdn'
+# MEDIA_ROOT = BASE_DIR / 'static' / 'media'
 
-#Debug toolbar
+# Debug toolbar
 INTERNAL_IPS = ['127.0.0.1']
 
-# Custom User setting accoring to the documentation
-# https://docs.djangoproject.com/en/2.2/topics/auth/customizing/#a-full-example
+# Custom User setting according to the documentation
 AUTH_USER_MODEL = 'myuser.SiteUser'
 
 LOGIN_REDIRECT_URL = '/'

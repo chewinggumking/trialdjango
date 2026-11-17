@@ -1,0 +1,55 @@
+<div class="row g-3">
+    {% for flat in flat_list %}
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0 hover-shadow transition">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <div>
+                            <span class="badge bg-secondary mb-1">Wing {{ flat.wing }}</span>
+                            <h5 class="card-title fw-bold text-dark mb-0">Flat {{ flat.flat_number }}</h5>
+                        </div>
+                        <div>
+                            {% if flat.rentalstatus.is_rented %}
+                                <span class="badge-rented">
+                                    <i class="bi bi-person-badge me-1"></i>Rented
+                                </span>
+                            {% else %}
+                                <span class="badge-owner">
+                                    <i class="bi bi-house-check me-1"></i>Owner
+                                </span>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="mt-3 text-muted small">
+                        <div class="d-flex align-items-center mb-1">
+                            <i class="bi bi-person text-secondary me-2"></i>
+                            <span class="text-truncate">
+                                {% if flat.guest %}
+                                    <strong class="text-dark">{{ flat.guest.full_name }}</strong>
+                                {% else %}
+                                    <span class="fst-italic text-muted">No resident assigned</span>
+                                {% endif %}
+                            </span>
+                        </div>
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="bi bi-car-front text-secondary me-2"></i>
+                            <span>{{ flat.vehicle_count }} vehicle{{ flat.vehicle_count|pluralize }} registered</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer bg-light border-0 pt-0 pb-3 px-3">
+                    <a href="{% url 'flat_detail' flat.slug %}" class="btn btn-sm btn-outline-primary w-100">
+                        View Flat Details <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% empty %}
+        <div class="col-12 text-center py-5">
+            <i class="bi bi-building-slash fs-1 text-muted d-block mb-3"></i>
+            <h5 class="text-muted">No flats found</h5>
+            <p class="text-secondary small">Try adjusting your search criteria or wing filter.</p>
+        </div>
+    {% endfor %}
+</div>

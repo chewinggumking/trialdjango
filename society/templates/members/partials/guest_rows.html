@@ -1,0 +1,37 @@
+{% for guest in guests %}
+<tr id="guest-row-{{ guest.id }}" class="align-middle">
+    <td>
+        <a href="{% url 'flat_detail' guest.flat_number.slug %}" class="badge bg-light text-dark border text-decoration-none px-2 py-2 fs-6">
+            <i class="bi bi-door-closed me-1 text-primary"></i>Flat {{ guest.flat_number }}
+        </a>
+    </td>
+    <td>
+        <div class="fw-semibold text-dark">{{ guest.full_name }}</div>
+    </td>
+    <td>
+        <a href="tel:{{ guest.mobile }}" class="text-decoration-none text-muted">
+            <i class="bi bi-telephone me-1 text-success"></i>{{ guest.mobile }}
+        </a>
+    </td>
+    <td class="text-end">
+        <a href="{% url 'edit' guest.id %}" class="btn btn-sm btn-outline-secondary me-1" title="Edit Member">
+            <i class="bi bi-pencil"></i> Edit
+        </a>
+        <button class="btn btn-sm btn-outline-danger"
+                title="Delete Member"
+                hx-delete="{% url 'delete' guest.id %}"
+                hx-confirm="Are you sure you want to remove {{ guest.full_name }}?"
+                hx-target="#guest-row-{{ guest.id }}"
+                hx-swap="outerHTML swap:350ms">
+            <i class="bi bi-trash"></i> Delete
+        </button>
+    </td>
+</tr>
+{% empty %}
+<tr>
+    <td colspan="4" class="text-center py-4 text-muted">
+        <i class="bi bi-inbox fs-2 d-block mb-2"></i>
+        No members found matching your search.
+    </td>
+</tr>
+{% endfor %}

@@ -1,27 +1,50 @@
-{% extends 'index1.html' %}
+{% extends 'base.html' %}
 
-{% block title %} Add Guest {% endblock title %} 
-
+{% block title %}Add New Flat{% endblock %}
 
 {% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-7 col-lg-6">
+        <div class="mb-3">
+            <a href="{% url 'all_flats' %}" class="text-decoration-none text-muted small">
+                <i class="bi bi-arrow-left me-1"></i> Back to all flats
+            </a>
+        </div>
+        
+        <div class="card shadow-sm border-0">
+            <div class="card-header">
+                <h5 class="mb-0 fw-bold">
+                    <i class="bi bi-door-plus-fill text-primary me-2"></i>Add Flat
+                </h5>
+            </div>
+            <div class="card-body p-4">
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    
+                    {% for field in form %}
+                        <div class="mb-3">
+                            <label for="{{ field.id_for_label }}" class="form-label fw-semibold">
+                                {{ field.label }}
+                            </label>
+                            {{ field }}
+                            {% if field.help_text %}
+                                <div class="form-text">{{ field.help_text }}</div>
+                            {% endif %}
+                            {% for error in field.errors %}
+                                <div class="text-danger small mt-1">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
 
-<form method="POST" action="">
-{% csrf_token %}    
-<!-- {% for field in form %}
-{{field.owner}}
-{% endfor %} -->
-
-<!-- <div class="input-field ">{{form.owner}}</div>
-{{form.flat_number}}
-{{form.wing}} -->
-{{form.as_p}}
-
-<button class="btn waves-effect waves-light right" type="submit" name="action">Add Flat
-    <i class="material-icons right">add</i>
-</button>
-</form>
-<br><br>
-
-
-
+                    <div class="d-flex justify-content-end gap-2 mt-4">
+                        <a href="{% url 'all_flats' %}" class="btn btn-outline-secondary">Cancel</a>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-check-lg me-1"></i> Create Flat
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}

@@ -1,26 +1,130 @@
-{% extends 'index1.html' %}
+{% extends 'base.html' %}
+
+{% block title %}Flat {{ flat.flat_number }} - Wing {{ flat.wing }}{% endblock %}
 
 {% block content %}
+<div class="mb-3">
+    <a href="{% url 'all_flats' %}" class="text-decoration-none text-muted small">
+        <i class="bi bi-arrow-left me-1"></i> Back to all flats
+    </a>
+</div>
 
+<div class="row align-items-center mb-4">
+    <div class="col-md-8">
+        <div class="d-flex align-items-center">
+            <span class="badge bg-primary fs-5 me-3">Wing {{ flat.wing }}</span>
+            <h2 class="h3 fw-bold mb-0">Flat {{ flat.flat_number }}</h2>
+        </div>
+    </div>
+</div>
 
-{{ flat }}<br>
-{{ flat.guest }}<br>
-{{ flat.guest.mobile }}<br>
+<div class="row g-4">
+    <!-- Left Column: Resident & Vehicles -->
+    <div class="col-lg-5">
+        <!-- Resident Info -->
+        <div class="card shadow-sm border-0 mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <span class="fw-semibold">
+                    <i class="bi bi-person-fill text-primary me-2"></i>Resident Info
+                </span>
+                {% if flat.guest %}
+                    <a href="{% url 'edit' flat.guest.id %}" class="btn btn-sm btn-outline-secondary">
+                        <i class="bi bi-pencil me-1"></i> Edit
+                    </a>
+                {% endif %}
+            </div>
+            <div class="card-body">
+                {% if flat.guest %}
+                    <h5 class="fw-bold mb-1">{{ flat.guest.full_name }}</h5>
+                    <div class="text-muted mb-2">
+                        <i class="bi bi-telephone me-1 text-success"></i>
+                        <a href="tel:{{ flat.guest.mobile }}" class="text-decoration-none text-muted">{{ flat.guest.mobile }}</a>
+                    </div>
+                {% else %}
+                    <div class="text-muted text-center py-3">
+                        <p class="mb-2">No occupant assigned to this flat.</p>
+                        <a href="{% url 'add_member' %}" class="btn btn-sm btn-outline-primary">
+                            <i class="bi bi-person-plus me-1"></i> Assign Member
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
 
-<h4>{{flat.rentalstatus}}</h4><br>
-{% for bill in flat.flatbill_set.all %}
-<p>
-    <a  href = "{% url 'bill_view' bill.id %}">{{bill}} - {{bill.total}}</a><br>
-</p>
-{% endfor %}
-{% if flat.has_vehicle %}
+        <!-- Occupancy Status Card (HTMX Toggle) -->
+        {% include 'members/partials/rental_status_card.html' %}
 
-    <ol><h3>Vehicles</h3>
-    {% for motor in flat.vehicle_set.all %}
-        <li>{{ motor }}</li>
+        <!-- Vehicles Card (HTMX Add/Delete) -->
+        <div class="card shadow-sm border-0 mb-4">
+            <div class="card-header fw-semibold">
+                <i class="bi bi-car-front-fill text-primary me-2"></i>Registered Vehicles
+            </div>
+            <div class="card-body">
+                {% include 'members/partials/vehicle_list.html' %}
+            </div>
+        </div>
+    </div>
 
-    {% endfor %}
-    </ol>
-{% endif %}
-
+    <!-- Right Column: Billing History -->
+    <div class="col-lg-7">
+        <div class="card shadow-sm border-0">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <span class="fw-semibold">
+                    <i class="bi bi-receipt text-primary me-2"></i>Billing History
+                </span>
+                <span class="badge bg-light text-muted border">{{ bills.count }} Total Bill{{ bills.count|pluralize }}</span>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Bill Date</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th class="text-end">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for bill in bills %}
+                                <tr>
+                                    <td>
+                                        <div class="fw-medium">{{ bill.bill_date|date:"j M Y" }}</div>
+                                        <small class="text-muted">{{ bill.bill_date|date:"F Y" }}</small>
+                                    </td>
+                                    <td>
+                                        <strong class="text-dark">₹{{ bill.total }}</strong>
+                                    </td>
+                                    <td>
+                                        {% if bill.is_paid %}
+                                            <span class="badge-paid">
+                                                <i class="bi bi-check-circle-fill me-1"></i> Paid
+                                                {% if bill.receipt %}(#{{ bill.receipt.id }}){% endif %}
+                                            </span>
+                                        {% else %}
+                                            <span class="badge-outstanding">
+                                                <i class="bi bi-exclamation-circle-fill me-1"></i> Outstanding
+                                            </span>
+                                        {% endif %}
+                                    </td>
+                                    <td class="text-end">
+                                        <a href="{% url 'bill_view' bill.id %}" class="btn btn-sm btn-outline-primary">
+                                            View Bill <i class="bi bi-arrow-right"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% empty %}
+                                <tr>
+                                    <td colspan="4" class="text-center py-4 text-muted">
+                                        No billing records found for this flat.
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}

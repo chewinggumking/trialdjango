@@ -1,0 +1,55 @@
+<div id="vehicles-list-container">
+    {% if vehicles %}
+        <div class="list-group mb-3">
+            {% for motor in vehicles %}
+                <div id="vehicle-item-{{ motor.id }}" class="list-group-item d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                        {% if 'TW' in motor.vehicle %}
+                            <i class="bi bi-bicycle fs-4 text-primary me-3"></i>
+                        {% else %}
+                            <i class="bi bi-car-front-fill fs-4 text-primary me-3"></i>
+                        {% endif %}
+                        <div>
+                            <div class="fw-semibold">{{ motor.get_vehicle_display }}</div>
+                            <span class="text-muted small">Slot / Parking registered</span>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn btn-sm btn-outline-danger"
+                                title="Remove vehicle"
+                                hx-delete="{% url 'delete_vehicle' motor.id %}"
+                                hx-confirm="Remove this vehicle from flat {{ flat }}?"
+                                hx-target="#vehicle-item-{{ motor.id }}"
+                                hx-swap="outerHTML swap:300ms">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="text-center py-4 text-muted bg-light rounded mb-3">
+            <i class="bi bi-car-front fs-2 d-block mb-1"></i>
+            <span>No vehicles registered for this flat.</span>
+        </div>
+    {% endif %}
+
+    <!-- Add Vehicle Form -->
+    <form hx-post="{% url 'add_vehicle' flat.slug %}"
+          hx-target="#vehicles-list-container"
+          hx-swap="outerHTML"
+          class="border rounded p-3 bg-light">
+        {% csrf_token %}
+        <h6 class="fw-semibold mb-2 small text-uppercase text-muted">Register New Vehicle</h6>
+        <div class="row g-2 align-items-center">
+            <div class="col">
+                {{ vehicle_form.vehicle }}
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary btn-sm">
+                    <i class="bi bi-plus-lg me-1"></i> Add Vehicle
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

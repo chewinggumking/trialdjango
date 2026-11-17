@@ -1,16 +1,18 @@
-from django.forms import ModelForm
+from django import forms
+from .models import FlatBill, Receipt
+from members.forms import BootstrapFormMixin
 
-from .models import  FlatBill, Receipt
 
-class ReceiptForm (ModelForm):
+class ReceiptForm(BootstrapFormMixin, forms.ModelForm):
     class Meta:
         model = Receipt
-        # fields = '__all__'
         exclude = ['related_bill']
-        # fields = ['paid_on','payment_mode', 'drawn_on', 'transaction_no', 'received_amount']
+        widgets = {
+            'paid_on': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
+        }
 
 
-class FlatBillForm(ModelForm):
+class FlatBillForm(BootstrapFormMixin, forms.ModelForm):
     class Meta:
         model = FlatBill
         fields = ['is_paid']

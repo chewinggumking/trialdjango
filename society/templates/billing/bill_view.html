@@ -1,115 +1,164 @@
-{% extends 'index1.html' %}
+{% extends 'base.html' %}
+
+{% block title %}Bill for Flat {{ bill.flat_name }} - {{ bill.bill_date|date:"F Y" }}{% endblock %}
 
 {% block content %}
-    <div>
-        
-        <table style="width:100%" class="bordered">
-            <tr> 
-                <th><h4>Flat : {{bill.flat_name}} </h4></th>
-                <th><h5>Bill Date: {{bill.bill_date|date:"j M Y"}}</h5></th>
-            </tr>
-            <tr>
-                <th>{{bill.flat_name.guest}}</th>
-                <th><strong>Bill Month: </strong>{{bill.bill_date|date:"M Y"}}</th>
-            </tr>
-            <tr>
-                {% if not bill.is_paid %}
-                    <td style="color:red">Outstanding</td>
-                    <td ><a href  ="{% url 'create_receipt' bill.id %}" style='color:red'><i class="material-icons">add</i> Create Receipt.</a></td>
-                {% else %}
-                    <td style="color:green">Paid: Receipt no. {{bill.receipt.id}}</td>
-                    <td ><a href  ="{% url 'create_receipt' bill.id %}" style='color:green'><i class="material-icons">edit</i> Edit Receipt.</a></td>
+<div class="mb-3 no-print">
+    <a href="{% url 'bill_list' %}" class="text-decoration-none text-muted small">
+        <i class="bi bi-arrow-left me-1"></i> Back to all bills
+    </a>
+</div>
 
-                {% endif %}
-            </tr>            
-            <tr>
-                
-            </tr>
-        </table>
-            <table style="width:100%" class="bordered">
-                <tr>
-                <th style="width:70%" class="center-align bordered">Particulars</th>
-                <th class="right-align">Amount (Rs.)</th> 
-                </tr>
-                
-                <tr>
-                    <td>Municipal Tax</td>
-                    <td class="right-align">{{bill.municipal_tax}}</td> 
-                </tr>
-                
-                </tr>
-                    <tr>
-                    <td>Maintenance Charges</td>
-                    <td class="right-align">{{bill.maintenance}}</td> 
-                </tr>
-
-                <tr>
-                   <td>Water Charges</td>
-                   <td class="right-align">{{bill.water_charges}}</td> 
-                </tr>
-                
-                <tr>
-                    <td>Parking Charges - Car/Scooter/Stilt</td>
-                    <td class="right-align">{{bill.parking_charges}}</td> 
-                </tr>
-
-                <tr>
-                    <td>Sinking Fund</td>
-                    <td class="right-align">{{bill.sinking_fund}}</td> 
-                </tr>
-
-                <tr>
-                        <td>Building Repair Fund</td>
-                        <td class="right-align">{{bill.building_repair}}</td> 
-                </tr>
-
-                <tr>
-                        <td>Electricity Insurance Charges</td>
-                        <td class="right-align">{{bill.elec_ins_chgs}}</td> 
-                </tr>
-
-                <tr>
-                        <td>Non Occupancy Charges</td>
-                        <td class="right-align">{{bill.noc_charges}}</td> 
-                </tr>
-
-                <tr>
-                        <td>Additional Items</td>
-                        <td class="right-align">{{bill.add_item_amt_1}}</td> 
-                </tr>
-
-                <tr>
-                        <td>Additional Items</td>
-                        <td class="right-align">{{bill.add_item_amt_2}}</td> 
-                </tr>
-
-                <tr>
-                        <td class="right-align"><strong>TOTAL</strong></td>
-                        <td class="right-align"><strong>{{bill.total}}</strong></td> 
-                </tr>
-
-            </table>
-        
-
-        </div>
-    
-        {% if bill.receipt %}
-            
-            <div style="border: 1px solid black; padding:5px 10px 5px 10px;">
-                <br>
-                <div style="font-weight:bold; font-size:30px ;">
-                    RECEIPT
-                   
-                    <div style="font-weight:medium; font-size:20px ;">
-                        <strong>Paid on: </strong>{{bill.receipt.paid_on}}<br>
-                        <hr>
-                        <strong>Paid by: </strong>{{bill.receipt.payment_mode}} drawn on {{bill.receipt.drawn_on}} vide transaction {{bill.receipt.transaction_no}}.<br>
+<div class="row justify-content-center">
+    <div class="col-lg-9">
+        <div class="card shadow-sm border-0 mb-4">
+            <div class="card-body p-4 p-md-5">
+                <!-- Header -->
+                <div class="d-flex justify-content-between align-items-start border-bottom pb-4 mb-4">
+                    <div>
+                        <div class="d-flex align-items-center mb-1">
+                            <i class="bi bi-buildings-fill text-primary fs-3 me-2"></i>
+                            <h3 class="fw-bold text-dark mb-0">Express Co-op Housing Society</h3>
+                        </div>
+                        <p class="text-muted small mb-0">Maintenance & Utility Bill</p>
                     </div>
-                    <h5>AMOUNT: {{bill.receipt.received_amount}}</h5>
-                </div> 
+                    <div class="text-end">
+                        <div class="badge bg-light text-dark border fs-6 mb-2">Bill #{{ bill.id }}</div>
+                        <div class="text-muted small">
+                            <strong>Date:</strong> {{ bill.bill_date|date:"j M Y" }}
+                        </div>
+                        <div class="text-muted small">
+                            <strong>Period:</strong> {{ bill.bill_date|date:"F Y" }}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flat & Resident Information -->
+                <div class="row g-3 p-3 bg-light rounded mb-4">
+                    <div class="col-sm-6">
+                        <span class="text-muted small text-uppercase fw-semibold d-block">Flat Details</span>
+                        <h5 class="fw-bold text-dark mb-0">Flat {{ bill.flat_name.flat_number }} (Wing {{ bill.flat_name.wing }})</h5>
+                    </div>
+                    <div class="col-sm-6 text-sm-end">
+                        <span class="text-muted small text-uppercase fw-semibold d-block">Occupant</span>
+                        <h6 class="fw-semibold text-dark mb-0">
+                            {% if bill.flat_name.guest %}
+                                {{ bill.flat_name.guest.full_name }}
+                            {% else %}
+                                <span class="text-muted fst-italic">Unassigned</span>
+                            {% endif %}
+                        </h6>
+                    </div>
+                </div>
+
+                <!-- Status Banner -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <span class="text-muted me-2">Status:</span>
+                        {% if bill.is_paid %}
+                            <span class="badge-paid fs-6">
+                                <i class="bi bi-check-circle-fill me-1"></i> Paid
+                            </span>
+                        {% else %}
+                            <span class="badge-outstanding fs-6">
+                                <i class="bi bi-exclamation-circle-fill me-1"></i> Outstanding
+                            </span>
+                        {% endif %}
+                    </div>
+                    <div class="no-print">
+                        <button onclick="window.print()" class="btn btn-sm btn-outline-secondary">
+                            <i class="bi bi-printer me-1"></i> Print Bill
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Particulars Breakdown Table -->
+                <div class="table-responsive mb-4">
+                    <table class="table table-bordered align-middle mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th scope="col" style="width: 70%;">Particulars / Description</th>
+                                <th scope="col" class="text-end" style="width: 30%;">Amount (₹)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Municipal Tax (BMC)</td>
+                                <td class="text-end">{{ bill.municipal_tax }}</td>
+                            </tr>
+                            <tr>
+                                <td>Maintenance Charges</td>
+                                <td class="text-end">{{ bill.maintenance }}</td>
+                            </tr>
+                            <tr>
+                                <td>Water Charges</td>
+                                <td class="text-end">{{ bill.water_charges }}</td>
+                            </tr>
+                            <tr>
+                                <td>Parking Charges (Car / Scooter / Stilt)</td>
+                                <td class="text-end">{{ bill.parking_charges }}</td>
+                            </tr>
+                            <tr>
+                                <td>Sinking Fund</td>
+                                <td class="text-end">{{ bill.sinking_fund }}</td>
+                            </tr>
+                            <tr>
+                                <td>Building Repair Fund</td>
+                                <td class="text-end">{{ bill.building_repair }}</td>
+                            </tr>
+                            <tr>
+                                <td>Electricity Insurance Charges</td>
+                                <td class="text-end">{{ bill.elec_ins_chgs }}</td>
+                            </tr>
+                            {% if bill.noc_charges > 0 %}
+                            <tr>
+                                <td>Non-Occupancy Charges (N.O.C.)</td>
+                                <td class="text-end">{{ bill.noc_charges }}</td>
+                            </tr>
+                            {% endif %}
+                            {% if bill.add_item_amt_1 > 0 %}
+                            <tr>
+                                <td>{{ bill.add_item_name_1|default:"Additional Item 1" }}</td>
+                                <td class="text-end">{{ bill.add_item_amt_1 }}</td>
+                            </tr>
+                            {% endif %}
+                            {% if bill.add_item_amt_2 > 0 %}
+                            <tr>
+                                <td>{{ bill.add_item_name_2|default:"Additional Item 2" }}</td>
+                                <td class="text-end">{{ bill.add_item_amt_2 }}</td>
+                            </tr>
+                            {% endif %}
+                        </tbody>
+                        <tfoot class="table-group-divider">
+                            <tr class="table-light fs-5">
+                                <th class="text-end fw-bold">TOTAL AMOUNT PAYABLE:</th>
+                                <th class="text-end fw-bold text-primary">₹{{ bill.total }}</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <!-- Receipt Section (HTMX Target) -->
+                <div id="receipt-section">
+                    {% if bill.receipt %}
+                        {% include 'billing/partials/receipt_section.html' with receipt=bill.receipt bill=bill %}
+                    {% else %}
+                        <div class="card bg-light border-0 p-4 text-center no-print">
+                            <p class="text-muted mb-3">This bill is currently unpaid. Record receipt upon receiving payment.</p>
+                            <div>
+                                <a href="{% url 'create_receipt' bill.id %}"
+                                   class="btn btn-success"
+                                   hx-get="{% url 'create_receipt' bill.id %}"
+                                   hx-target="#receipt-section"
+                                   hx-swap="outerHTML">
+                                    <i class="bi bi-receipt-cutoff me-1"></i> Record Payment & Issue Receipt
+                                </a>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
             </div>
-
-        {% endif %}
-
-    
+        </div>
+    </div>
+</div>
 {% endblock content %}

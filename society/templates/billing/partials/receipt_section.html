@@ -1,0 +1,47 @@
+<div id="receipt-section" class="card shadow-sm border-0 border-start border-success border-4 mt-4">
+    <div class="card-body p-4">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+            <div>
+                <span class="badge bg-success mb-1">Official Receipt</span>
+                <h4 class="fw-bold text-success mb-0">Receipt #{{ receipt.id }}</h4>
+            </div>
+            <div class="text-end">
+                <span class="text-muted small">Date of Payment:</span>
+                <div class="fw-semibold">{{ receipt.paid_on|date:"j F Y" }}</div>
+            </div>
+        </div>
+
+        <div class="row g-3 py-2 border-top border-bottom my-2 bg-light rounded px-2">
+            <div class="col-sm-4">
+                <span class="text-muted small d-block">Payment Mode</span>
+                <strong>{{ receipt.payment_mode }}</strong>
+            </div>
+            <div class="col-sm-4">
+                <span class="text-muted small d-block">Drawn On</span>
+                <strong>{{ receipt.drawn_on }}</strong>
+            </div>
+            <div class="col-sm-4">
+                <span class="text-muted small d-block">Transaction / Cheque No.</span>
+                <code>{{ receipt.transaction_no }}</code>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mt-3 pt-2">
+            <span class="fs-5 text-muted">Amount Received:</span>
+            <span class="fs-4 fw-bold text-success">₹{{ receipt.received_amount }}</span>
+        </div>
+
+        <div class="mt-3 text-end no-print">
+            <a href="{% url 'create_receipt' bill.id %}"
+               class="btn btn-sm btn-outline-secondary"
+               hx-get="{% url 'create_receipt' bill.id %}"
+               hx-target="#receipt-section"
+               hx-swap="outerHTML">
+                <i class="bi bi-pencil me-1"></i> Edit Receipt
+            </a>
+            <button onclick="window.print()" class="btn btn-sm btn-outline-dark ms-2">
+                <i class="bi bi-printer me-1"></i> Print Receipt
+            </button>
+        </div>
+    </div>
+</div>

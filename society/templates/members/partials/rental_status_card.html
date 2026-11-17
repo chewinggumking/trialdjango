@@ -1,0 +1,33 @@
+<div id="rental-status-card" class="card shadow-sm border-0 mb-4">
+    <div class="card-body d-flex justify-content-between align-items-center">
+        <div>
+            <h6 class="text-muted text-uppercase fw-semibold mb-1 small">Occupancy Status</h6>
+            {% if rental_status.is_rented %}
+                <div class="d-flex align-items-center">
+                    <span class="badge-rented fs-6 me-2">
+                        <i class="bi bi-person-badge-fill me-1"></i> Rented Flat
+                    </span>
+                    <span class="text-muted small">(N.O.C. charges apply to bills)</span>
+                </div>
+            {% else %}
+                <div class="d-flex align-items-center">
+                    <span class="badge-owner fs-6 me-2">
+                        <i class="bi bi-house-check-fill me-1"></i> Owner Occupied
+                    </span>
+                    <span class="text-muted small">(Standard maintenance)</span>
+                </div>
+            {% endif %}
+        </div>
+        <div>
+            <form hx-post="{% url 'toggle_rental' flat.slug %}"
+                  hx-target="#rental-status-card"
+                  hx-swap="outerHTML">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-sm {% if rental_status.is_rented %}btn-outline-success{% else %}btn-outline-warning{% endif %}">
+                    <i class="bi bi-arrow-repeat me-1"></i>
+                    Switch to {% if rental_status.is_rented %}Owner Occupied{% else %}Rented{% endif %}
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
