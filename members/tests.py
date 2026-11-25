@@ -107,12 +107,22 @@ class MembersViewTests(TestCase):
     def test_add_and_delete_vehicle_htmx(self):
         response = self.client.post(
             reverse('add_vehicle', kwargs={'slug': self.flat.slug}),
-            data={'vehicle': 'FWST'},
+            data={
+                'vehicle': 'FWST',
+                'registration_number': 'mh 02 ab 1234',
+                'make': 'Honda',
+                'model': 'City',
+            },
             headers={"HX-Request": "true"}
         )
         self.assertEqual(response.status_code, 200)
         self.assertEqual(self.flat.vehicle_set.count(), 1)
         vehicle = self.flat.vehicle_set.first()
+        self.assertEqual(vehicle.registration_number, 'MH 02 AB 1234')
+        self.assertEqual(vehicle.make, 'Honda')
+        self.assertEqual(vehicle.model, 'City')
+        self.assertContains(response, 'MH 02 AB 1234')
+        self.assertContains(response, 'Honda City')
 
         del_response = self.client.delete(
             reverse('delete_vehicle', kwargs={'pk': vehicle.id}),
@@ -120,3 +130,21 @@ class MembersViewTests(TestCase):
         )
         self.assertEqual(del_response.status_code, 200)
         self.assertEqual(self.flat.vehicle_set.count(), 0)
+
+    def test_add_vehicle_bh_series_and_invalid_format(self):
+        bh_response = self.client.post(
+            reverse('add_vehicle', kwargs={'slug': self.flat.slug}),
+            data={'vehicle': 'TWST', 'registration_number': '22 BH 1234 AB'},
+            headers={"HX-Request": "true"}
+        )
+        self.assertEqual(bh_response.status_code, 200)
+        self.assertEqual(self.flat.vehicle_set.count(), 1)
+
+        bad_response = self.client.post(
+            reverse('add_vehicle', kwargs={'slug': self.flat.slug}),
+            data={'vehicle': 'FWST', 'registration_number': 'INVALID123'},
+            headers={"HX-Request": "true"}
+        )
+        self.assertEqual(bad_response.status_code, 200)
+        self.assertEqual(self.flat.vehicle_set.count(), 1)
+        self.assertContains(bad_response, 'Enter a valid Indian vehicle registration number')

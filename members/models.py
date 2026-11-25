@@ -1,7 +1,7 @@
 from django.db import models
 from django.urls import reverse
 
-from  .validators import mobile_validator, number_validator
+from  .validators import mobile_validator, number_validator, indian_vehicle_reg_validator
 
 
 
@@ -86,6 +86,31 @@ class Vehicle(models.Model):
         )
         vehicle         = models.CharField(max_length=4, choices=TYPE)
         flat            =models.ForeignKey(Flat, on_delete=models.CASCADE)
+        registration_number = models.CharField(
+                max_length=15,
+                blank=True,
+                default="",
+                verbose_name="Registration Number",
+                help_text="e.g. MH 02 AB 1234 or 22 BH 1234 AB",
+                validators=[indian_vehicle_reg_validator],
+        )
+        make = models.CharField(max_length=50, blank=True, default="", verbose_name="Make")
+        model = models.CharField(max_length=50, blank=True, default="", verbose_name="Model")
+
+        def save(self, *args, **kwargs):
+                if self.registration_number:
+                        self.registration_number = " ".join(self.registration_number.strip().upper().split())
+                if self.make:
+                        self.make = self.make.strip()
+                if self.model:
+                        self.model = self.model.strip()
+                super().save(*args, **kwargs)
         
         def __str__(self):
-                return ("{} {}".format(self.flat, self.get_vehicle_display()))
+                parts = [str(self.flat), self.get_vehicle_display()]
+                make_model = " ".join(p for p in (self.make, self.model) if p)
+                if make_model:
+                        parts.append("- " + make_model)
+                if self.registration_number:
+                        parts.append("({})".format(self.registration_number))
+                return " ".join(parts)

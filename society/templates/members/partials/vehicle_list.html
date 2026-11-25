@@ -10,8 +10,19 @@
                             <i class="bi bi-car-front-fill fs-4 text-primary me-3"></i>
                         {% endif %}
                         <div>
-                            <div class="fw-semibold">{{ motor.get_vehicle_display }}</div>
-                            <span class="text-muted small">Slot / Parking registered</span>
+                            <div class="fw-semibold">
+                                {{ motor.get_vehicle_display }}
+                                {% if motor.registration_number %}
+                                    <span class="badge bg-light text-dark border font-monospace ms-1">{{ motor.registration_number }}</span>
+                                {% endif %}
+                            </div>
+                            <span class="text-muted small">
+                                {% if motor.make or motor.model %}
+                                    {{ motor.make }} {{ motor.model }}
+                                {% else %}
+                                    Slot / Parking registered
+                                {% endif %}
+                            </span>
                         </div>
                     </div>
                     <div>
@@ -41,11 +52,23 @@
           class="border rounded p-3 bg-light">
         {% csrf_token %}
         <h6 class="fw-semibold mb-2 small text-uppercase text-muted">Register New Vehicle</h6>
-        <div class="row g-2 align-items-center">
-            <div class="col">
+        <div class="row g-2 align-items-start">
+            <div class="col-sm-6">
                 {{ vehicle_form.vehicle }}
             </div>
-            <div class="col-auto">
+            <div class="col-sm-6">
+                {{ vehicle_form.registration_number }}
+                {% for error in vehicle_form.registration_number.errors %}
+                    <div class="text-danger small mt-1">{{ error }}</div>
+                {% endfor %}
+            </div>
+            <div class="col-sm-6">
+                {{ vehicle_form.make }}
+            </div>
+            <div class="col-sm-6">
+                {{ vehicle_form.model }}
+            </div>
+            <div class="col-12 text-end">
                 <button type="submit" class="btn btn-primary btn-sm">
                     <i class="bi bi-plus-lg me-1"></i> Add Vehicle
                 </button>

@@ -155,11 +155,12 @@ def add_vehicle(request, slug):
             vehicle = form.save(commit=False)
             vehicle.flat = flat
             vehicle.save()
+            form = VehicleForm()
         vehicles = flat.vehicle_set.all()
         return render(request, 'members/partials/vehicle_list.html', {
             'flat': flat,
             'vehicles': vehicles,
-            'vehicle_form': VehicleForm()
+            'vehicle_form': form
         })
     return HttpResponse(status=405)
 

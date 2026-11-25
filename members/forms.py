@@ -31,7 +31,26 @@ class FlatForm(BootstrapFormMixin, forms.ModelForm):
 class VehicleForm(BootstrapFormMixin, forms.ModelForm):
     class Meta:
         model = Vehicle
-        fields = ['vehicle']
+        fields = ['vehicle', 'registration_number', 'make', 'model']
         widgets = {
             'vehicle': forms.Select(attrs={'class': 'form-select'}),
+            'registration_number': forms.TextInput(attrs={
+                'class': 'form-control text-uppercase',
+                'placeholder': 'e.g. MH 02 AB 1234',
+                'maxlength': '15',
+            }),
+            'make': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Make (e.g. Honda, Maruti)',
+                'maxlength': '50',
+            }),
+            'model': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Model (e.g. City, Swift)',
+                'maxlength': '50',
+            }),
         }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['registration_number'].required = True
