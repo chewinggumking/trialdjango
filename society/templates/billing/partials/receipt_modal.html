@@ -1,0 +1,41 @@
+<div class="modal fade" id="receipt-modal" tabindex="-1" aria-labelledby="receiptModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content border-0 shadow">
+            <div class="modal-header bg-light">
+                <h5 class="modal-title fw-bold text-primary" id="receiptModalLabel">
+                    <i class="bi bi-receipt me-2"></i>{% if edit %}Edit Receipt{% else %}Record Payment & Issue Receipt{% endif %}
+                </h5>
+                <div class="d-flex align-items-center gap-2">
+                    <span class="badge bg-white text-dark border">Bill #{{ bill.id }} · Flat {{ bill.flat_name }} (₹{{ bill.total }})</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            </div>
+            <div id="receipt-modal-body" class="modal-body p-4">
+                {% include 'billing/partials/receipt_modal_body.html' %}
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    (function () {
+        const modalEl = document.getElementById('receipt-modal');
+        if (!modalEl) return;
+        const modal = new bootstrap.Modal(modalEl);
+        modal.show();
+        modalEl.addEventListener('hidden.bs.modal', function () {
+            if (modalEl.dataset.saved !== 'true') {
+                const toggleId = '{{ source }}' === 'detail'
+                    ? 'bill-detail-toggle-{{ bill.id }}'
+                    : 'bill-toggle-{{ bill.id }}';
+                const toggleEl = document.getElementById(toggleId);
+                if (toggleEl) {
+                    toggleEl.checked = false;
+                }
+            }
+            const container = document.getElementById('modal-container');
+            if (container) {
+                container.innerHTML = '';
+            }
+        }, { once: true });
+    })();
+</script>

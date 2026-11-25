@@ -1,0 +1,26 @@
+<div class="text-center py-3">
+    <i class="bi bi-check-circle-fill text-success fs-1"></i>
+    <p class="fw-semibold mt-2 mb-0">Receipt #{{ receipt.id }} saved.</p>
+</div>
+<script>
+    (function () {
+        const modalEl = document.getElementById('receipt-modal');
+        if (!modalEl) return;
+        modalEl.dataset.saved = 'true';
+        const instance = bootstrap.Modal.getInstance(modalEl);
+        if (instance) {
+            instance.hide();
+        }
+    })();
+</script>
+
+{% if source == 'list' %}
+    <table>
+        <tbody>
+            {% include 'billing/partials/bill_single_row.html' with bill=bill oob=True %}
+        </tbody>
+    </table>
+{% else %}
+    {% include 'billing/partials/bill_status_badge.html' with bill=bill oob=True %}
+    {% include 'billing/partials/receipt_section.html' with receipt=receipt bill=bill oob=True %}
+{% endif %}

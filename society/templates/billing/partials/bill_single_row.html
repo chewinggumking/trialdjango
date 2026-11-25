@@ -1,4 +1,4 @@
-<tr id="bill-row-{{ bill.id }}" class="align-middle">
+<tr id="bill-row-{{ bill.id }}" class="align-middle"{% if oob %} hx-swap-oob="outerHTML"{% endif %}>
     <td>
         <a href="{% url 'bill_view' bill.id %}" class="fw-bold text-dark text-decoration-none">
             Flat {{ bill.flat_name }}
@@ -15,30 +15,46 @@
         <div>{{ bill.bill_date|date:"j M Y" }}</div>
     </td>
     <td>
-        {% if bill.is_paid %}
-            <span class="badge-paid">
-                <i class="bi bi-check-circle-fill me-1"></i> Paid
-                {% if bill.receipt %}(#{{ bill.receipt.id }}){% endif %}
-            </span>
-        {% else %}
-            <span class="badge-outstanding">
-                <i class="bi bi-exclamation-circle-fill me-1"></i> Outstanding
-            </span>
-        {% endif %}
+        <div class="d-flex align-items-center gap-2">
+            <div class="form-check form-switch mb-0">
+                <input class="form-check-input"
+                       type="checkbox"
+                       role="switch"
+                       id="bill-toggle-{{ bill.id }}"
+                       title="Toggle Paid / Not Paid"
+                       aria-label="Toggle paid status for Flat {{ bill.flat_name }}"
+                       {% if bill.is_paid %}
+                           checked
+                           {% if bill.receipt %}
+                               hx-get="{% url 'bill_paid' bill.id 'unpaid' %}?modal=1&source=list"
+                               hx-target="#modal-container"
+                               hx-swap="innerHTML"
+                           {% else %}
+                               hx-post="{% url 'bill_paid' bill.id 'unpaid' %}"
+                               hx-target="#bill-row-{{ bill.id }}"
+                               hx-swap="outerHTML"
+                           {% endif %}
+                       {% else %}
+                           hx-get="{% url 'create_receipt' bill.id %}?modal=1&source=list"
+                           hx-target="#modal-container"
+                           hx-swap="innerHTML"
+                       {% endif %}>
+            </div>
+            {% if bill.is_paid %}
+                <span class="badge-paid">
+                    <i class="bi bi-check-circle-fill me-1"></i> Paid
+                    {% if bill.receipt %}(#{{ bill.receipt.id }}){% endif %}
+                </span>
+            {% else %}
+                <span class="badge-outstanding">
+                    <i class="bi bi-exclamation-circle-fill me-1"></i> Outstanding
+                </span>
+            {% endif %}
+        </div>
     </td>
     <td class="text-end">
-        <a href="{% url 'bill_view' bill.id %}" class="btn btn-sm btn-outline-primary me-1" title="View Bill Details">
+        <a href="{% url 'bill_view' bill.id %}" class="btn btn-sm btn-outline-primary" title="View Bill Details">
             <i class="bi bi-eye"></i> View
         </a>
-        {% if not bill.is_paid %}
-            <button class="btn btn-sm btn-outline-success"
-                    title="Mark Bill as Paid"
-                    hx-post="{% url 'bill_paid' bill.id 'paid' %}"
-                    hx-target="#bill-row-{{ bill.id }}"
-                    hx-swap="outerHTML"
-                    hx-confirm="Mark bill for Flat {{ bill.flat_name }} as paid?">
-                <i class="bi bi-check-lg"></i> Mark Paid
-            </button>
-        {% endif %}
     </td>
 </tr>

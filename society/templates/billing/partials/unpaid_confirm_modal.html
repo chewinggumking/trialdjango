@@ -1,0 +1,66 @@
+<div class="modal fade" id="unpaid-confirm-modal" tabindex="-1" aria-labelledby="unpaidConfirmModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow">
+            <div class="modal-header bg-light">
+                <h5 class="modal-title fw-bold text-dark" id="unpaidConfirmModalLabel">
+                    <i class="bi bi-exclamation-triangle-fill text-warning me-2"></i>Mark Bill as Not Paid?
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div id="unpaid-confirm-body" class="modal-body p-4">
+                <p class="mb-2">
+                    Bill <strong>#{{ bill.id }}</strong> for <strong>Flat {{ bill.flat_name }}</strong>
+                    currently has <strong>Receipt #{{ receipt.id }}</strong>
+                    (₹{{ receipt.received_amount }} paid on {{ receipt.paid_on|date:"j M Y" }}).
+                </p>
+                <p class="text-muted mb-0">
+                    Would you like to keep the existing receipt record or delete it?
+                </p>
+            </div>
+            <div class="modal-footer bg-light d-flex justify-content-between">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                    Cancel
+                </button>
+                <div class="d-flex gap-2">
+                    <button type="button"
+                            class="btn btn-outline-primary"
+                            hx-post="{% url 'bill_paid' bill.id 'unpaid' %}?modal=1&source={{ source }}&receipt_action=keep"
+                            hx-target="#unpaid-confirm-body"
+                            hx-swap="innerHTML">
+                        <i class="bi bi-archive me-1"></i> Keep Receipt
+                    </button>
+                    <button type="button"
+                            class="btn btn-danger"
+                            hx-post="{% url 'bill_paid' bill.id 'unpaid' %}?modal=1&source={{ source }}&receipt_action=delete"
+                            hx-target="#unpaid-confirm-body"
+                            hx-swap="innerHTML">
+                        <i class="bi bi-trash me-1"></i> Delete Receipt
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    (function () {
+        const modalEl = document.getElementById('unpaid-confirm-modal');
+        if (!modalEl) return;
+        const modal = new bootstrap.Modal(modalEl);
+        modal.show();
+        modalEl.addEventListener('hidden.bs.modal', function () {
+            if (modalEl.dataset.saved !== 'true') {
+                const toggleId = '{{ source }}' === 'detail'
+                    ? 'bill-detail-toggle-{{ bill.id }}'
+                    : 'bill-toggle-{{ bill.id }}';
+                const toggleEl = document.getElementById(toggleId);
+                if (toggleEl) {
+                    toggleEl.checked = true;
+                }
+            }
+            const container = document.getElementById('modal-container');
+            if (container) {
+                container.innerHTML = '';
+            }
+        }, { once: true });
+    })();
+</script>

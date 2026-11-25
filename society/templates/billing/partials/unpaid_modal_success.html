@@ -1,0 +1,25 @@
+<div class="text-center py-2">
+    <p class="fw-semibold mb-0">Bill #{{ bill.id }} marked as unpaid.</p>
+</div>
+<script>
+    (function () {
+        const modalEl = document.getElementById('unpaid-confirm-modal');
+        if (!modalEl) return;
+        modalEl.dataset.saved = 'true';
+        const instance = bootstrap.Modal.getInstance(modalEl);
+        if (instance) {
+            instance.hide();
+        }
+    })();
+</script>
+
+{% if source == 'list' %}
+    <table>
+        <tbody>
+            {% include 'billing/partials/bill_single_row.html' with bill=bill oob=True %}
+        </tbody>
+    </table>
+{% else %}
+    {% include 'billing/partials/bill_status_badge.html' with bill=bill oob=True %}
+    {% include 'billing/partials/receipt_section.html' with receipt=receipt bill=bill oob=True %}
+{% endif %}

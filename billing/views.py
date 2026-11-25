@@ -139,25 +139,37 @@ def bill_view(request, id):
 
 def bill_paid(request, id, status="paid"):
     """
-    Marks a bill as paid. If called from HTMX, returns an updated row or status badge.
+    Toggles a bill's paid status. On modal GET for unpaid, prompts whether to keep or delete receipt.
     """
     bill = get_object_or_404(FlatBill, id=id)
+    is_modal = request.GET.get('modal') == '1'
+    source = request.GET.get('source', 'detail')
+
+    if request.method == "GET" and is_modal and status.lower() != "paid":
+        receipt = getattr(bill, 'receipt', None)
+        return render(request, 'billing/partials/unpaid_confirm_modal.html', {
+            'bill': bill,
+            'receipt': receipt,
+            'source': source,
+        })
+
     if request.method in ["POST", "GET"]:
         bill.is_paid = (status.lower() == "paid")
         bill.save()
 
-        # If marking as paid and no receipt exists, auto-create a simple receipt record
-        if bill.is_paid and not hasattr(bill, 'receipt'):
-            Receipt.objects.create(
-                related_bill=bill,
-                paid_on=date.today(),
-                payment_mode="Online/Bank Transfer",
-                drawn_on="Direct",
-                transaction_no=f"TXN-{bill.id}-{int(datetime.now().timestamp())}",
-                received_amount=bill.total()
-            )
+        if not bill.is_paid and request.GET.get('receipt_action') == 'delete':
+            receipt = getattr(bill, 'receipt', None)
+            if receipt:
+                receipt.delete()
+                bill.refresh_from_db()
 
         if request.htmx:
+            if is_modal:
+                return render(request, 'billing/partials/unpaid_modal_success.html', {
+                    'bill': bill,
+                    'receipt': getattr(bill, 'receipt', None),
+                    'source': source,
+                })
             # Check if this was called from the list table or the detail view
             target = request.htmx.target or ""
             if "badge" in target or "status" in target:
@@ -175,6 +187,8 @@ def create_receipt(request, bill_id):
     bill = get_object_or_404(FlatBill, id=bill_id)
     receipt_instance = getattr(bill, 'receipt', None)
     edit = receipt_instance is not None
+    is_modal = request.GET.get('modal') == '1'
+    source = request.GET.get('source', 'detail')
 
     if request.method == "POST":
         receipt_form = ReceiptForm(request.POST, instance=receipt_instance)
@@ -186,6 +200,12 @@ def create_receipt(request, bill_id):
             receipt.save()
 
             if request.htmx:
+                if is_modal:
+                    return render(request, 'billing/partials/receipt_modal_success.html', {
+                        'bill': bill,
+                        'receipt': receipt,
+                        'source': source,
+                    })
                 return render(request, 'billing/partials/receipt_section.html', {
                     'bill': bill,
                     'receipt': receipt
@@ -201,9 +221,13 @@ def create_receipt(request, bill_id):
     context = {
         'form': receipt_form,
         'edit': edit,
-        'bill': bill
+        'bill': bill,
+        'source': source,
     }
 
     if request.htmx:
+        if is_modal:
+            template = 'billing/partials/receipt_modal_body.html' if request.method == "POST" else 'billing/partials/receipt_modal.html'
+            return render(request, template, context)
         return render(request, 'billing/partials/receipt_form_partial.html', context)
     return render(request, 'billing/receipt_form.html', context)
